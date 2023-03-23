@@ -3,6 +3,7 @@ import numpy as np
 
 
 window = pyglet.window.Window(800, 600)
+
 batch = pyglet.graphics.Batch()
 
 road = pyglet.shapes.Rectangle(x=10, y=10, width=window.width-20,
@@ -12,6 +13,8 @@ road = pyglet.shapes.Rectangle(x=10, y=10, width=window.width-20,
 dirt = pyglet.shapes.Rectangle(x=120, y=120, width=window.width-240,
                                  height=window.height-240, color=(53, 40, 30),
                                  batch=batch)
+
+uwu = pyglet.shapes.Rectangle(x = 50 , y = 30 , width = 100 , height = 300 , color = (255,255,255) , batch = batch )
 
 class Car:
     def __init__(self):
@@ -61,7 +64,7 @@ def on_draw():
     window.clear()
 
     car.udpate()
-
+    uwu.draw()
     batch.draw()
 
 

@@ -4,13 +4,22 @@ from pyglet.shapes import Circle, Rectangle
 from pyglet.app import run
 from pyglet.graphics import Batch
 
+
+#se definen variables globales del largo y ancho de la ventana
 WIDTH = 1000
 HEIGHT = 700
 WINDOW_TITLE = 'auxiliar 1! ૮ ˶ᵔ ᵕ ᵔ˶ ა'
 FULL_SCREEN = False
+
+#ventana es un objeto Window
+
 ventana = Window(WIDTH, HEIGHT, WINDOW_TITLE, resizable=True)
+
+#creamos un Batch con nombre auto
 auto = Batch()
-rueda0 = Circle(x=1.5*ventana.width//2, y=0.75*ventana.height//2, radius=70, color=(200, 200, 30), batch=auto)
+
+#notemos como todas las partes del auto tienen batch=auto
+rueda0 = Circle(x=1.5*ventana.width//2, y=0.75*ventana.height//2, radius=70, color=(255, 255, 255), batch=auto)
 rueda1 = Circle(x=0.75*ventana.width//2, y=0.75*ventana.height//2, radius=70, color=(200, 200, 30), batch=auto)
 chasis = Rectangle(x=ventana.width//4, y=4*ventana.height//9, width=2*ventana.width//3, height=ventana.height//3, color=(20, 200, 20), batch=auto)
 
@@ -30,7 +39,7 @@ def on_draw():
     auto.draw()
 
 
-
+#parecieria que run() llama a on_draw()
 run()
 
 
