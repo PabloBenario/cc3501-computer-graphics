@@ -19,11 +19,11 @@ __license__ = "MIT"
 
 # Example parameters
 
-NUMBER_OF_CIRCLES = 10
-CIRCLE_DISCRETIZATION = 20
+NUMBER_OF_CIRCLES = 5
+CIRCLE_DISCRETIZATION = 15
 RADIUS = 0.08
-WINDOW_WIDTH = 600
-WINDOW_HEIGHT = 600
+WINDOW_WIDTH = 2000
+WINDOW_HEIGHT = 2000
 
 # Convenience function to ease initialization
 def createGPUShape(pipeline, shape):
@@ -137,8 +137,8 @@ def collideWithBorder(circle):
 class Controller:
     def __init__(self):
         self.fillPolygon = True
-        self.circleCollisions = False
-        self.useGravity = False
+        self.circleCollisions = True
+        self.useGravity = True
 
 # we will use the global controller as communication with the callback function
 controller = Controller()
