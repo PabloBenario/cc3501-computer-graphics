@@ -130,6 +130,53 @@ def showNavePrincipal(x , y ):
     star1.draw()
     star2.draw()
 
+
+def showNaveSecundarias(x , y ):
+    equiTriangle(x, y, SIZE/10, SIZE/50 , SIZE/50 , 50, 100, 200)  
+    equiTriangle(x, y , -SIZE/35 , SIZE/50 , SIZE/50 , 50, 100, 200 )
+
+    equiTriangle(x-SIZE/50 , y , SIZE/20 , SIZE/100 , SIZE/100 , 50 , 100 , 200)
+    equiTriangle(x+SIZE/50 , y , SIZE/20 , SIZE/100 , SIZE/100 , 50 , 100 , 200)
+
+    equiTriangle(x-SIZE/50 , y , -SIZE/15, SIZE/100 , SIZE/100 , 50 , 100 , 200 )
+    equiTriangle(x+SIZE/50 , y , -SIZE/15, SIZE/100 , SIZE/100 , 50 , 100 , 200 )
+
+
+    t1 = pyglet.shapes.Triangle(
+    x-SIZE/50, y,
+    x - 2*SIZE/50 , y + SIZE/50,
+    x - 3*SIZE/50 , y - SIZE/15,
+    color=(50,0,255),
+    )
+
+    t2 = pyglet.shapes.Triangle(
+    x+SIZE/50, y,
+    x + 2*SIZE/50 , y + SIZE/50,
+    x + 3*SIZE/50 , y - SIZE/15,
+    color=(50,0,255),
+    )
+
+    star1 = pyglet.shapes.Star(
+        x= x-SIZE/50,
+        y= y,
+        outer_radius=4*SIZE/400,
+        inner_radius=4*SIZE/200,
+        num_spikes=4,
+        color=(50,50,0)
+    )
+    star2 = pyglet.shapes.Star(
+        x= x+SIZE/50,
+        y= y,
+        outer_radius=4*SIZE/400,
+        inner_radius=4*SIZE/200,
+        num_spikes=4,
+        color=(50,50,0)
+    )
+    t1.draw()
+    t2.draw()
+    star1.draw()
+    star2.draw()
+
 def naveChica(x,y): 
     equiTriangle(x,y, 20 , 20 , 20 , 0 , 0, 255)
     equiTriangleS(x,y , 20 , 20 , 20 , 250, 250 , 0 , 0.5)
@@ -153,10 +200,23 @@ def on_draw():
 
     # t1.draw()
     # t2.draw()
+
+    # naves principales !
     showNavePrincipal(SIZE/2 , SIZE/2*1.25)
     showNavePrincipal(SIZE/2,SIZE/2*1.25 - SIZE/4 )
+
+    # naves secundarias !
+
+    showNaveSecundarias(SIZE/4 , SIZE/4)
+    showNaveSecundarias(SIZE/4+ SIZE/2 , SIZE/4)
     
-    naveChica(650, 650)
+    naveChica(SIZE/4+SIZE/8, SIZE/2)    
+    naveChica(SIZE/4+3*SIZE/8, SIZE/2)
+
+
+
+    naveChica(SIZE/4+SIZE/8, SIZE/2-SIZE/8)    
+    naveChica(SIZE/4+3*SIZE/8, SIZE/2-SIZE/8)
     
 
 
