@@ -5,7 +5,6 @@ from pyglet.graphics import Batch
 import pyglet
 import random
 import numpy as np
-import math
 #debe usarse una ventana cuadrada
 SIZE = 700
 WIDTH = SIZE
@@ -217,27 +216,6 @@ def on_draw():
 
     naveChica(SIZE/4+SIZE/8, SIZE/2-SIZE/8)    
     naveChica(SIZE/4+3*SIZE/8, SIZE/2-SIZE/8)
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 pyglet.clock.schedule_interval(update, 1/60.0)
 
